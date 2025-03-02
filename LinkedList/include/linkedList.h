@@ -8,6 +8,7 @@ struct Node {
 
 struct List {
     struct Node *first;
+    int numOfNodes;
 };
 
 struct List initList();
