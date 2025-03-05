@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include "../include/linkedList.h"
 
-struct List initList() {
-    struct List list;
-    list.first = NULL;
-    list.numOfNodes = 0;
-    return list;
+void initList(struct List *list) {
+    list->first = NULL;
+    list->numOfNodes = 0;
 }
 
 void addFirst(struct List *list, int data) {

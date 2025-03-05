@@ -11,7 +11,7 @@ struct List {
     int numOfNodes;
 };
 
-struct List initList();
+void initList(struct List *list);
 
 void addFirst(struct List *list, int data);
 

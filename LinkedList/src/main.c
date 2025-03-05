@@ -2,7 +2,8 @@
 #include "../include/linkedList.h"
 
 int main() {
-    struct List list = initList();
+    struct List list;
+    initList(&list);
     int choice;
     int value;
     int first;
