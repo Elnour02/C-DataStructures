@@ -3,8 +3,11 @@
 #include "../include/linkedList.h"
 
 void initList(struct List *list) {
-    list->first = NULL;
-    list->numOfNodes = 0;
+    if (list != NULL) {
+        list->first = NULL;
+        list->numOfNodes = 0;
+    }
+    else printf("List is NULL\n");
 }
 
 void addFirst(struct List *list, int data) {
@@ -18,11 +21,11 @@ void addFirst(struct List *list, int data) {
         }
         else printf("Memory allocation failed\n");
     }
-    else printf("List uninitialized\n");
+    else printf("List is NULL\n");
 }
 
 void addLast(struct List *list, int data) {
-    if (list == NULL) printf("List uninitialized\n");
+    if (list == NULL) printf("List is NULL\n");
     else if (list->first == NULL) addFirst(list, data);
     else {
         struct Node *node = list->first;
@@ -41,8 +44,8 @@ void addLast(struct List *list, int data) {
 }
 
 void removeFirst(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else {
         struct Node *node = list->first;
         list->first = node->next;
@@ -52,8 +55,8 @@ void removeFirst(struct List *list) {
 }
 
 void removeLast(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else if (list->numOfNodes == 1) removeFirst(list);
     else {
         struct Node *node = list->first;
@@ -68,14 +71,15 @@ void removeLast(struct List *list) {
 }
 
 int getFirst(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else return list->first->data;
+    return INT_MIN;
 }
 
 int getLast(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else {
         struct Node *node = list->first;
         while (node->next != NULL) {
@@ -83,6 +87,7 @@ int getLast(struct List *list) {
         }
         return node->data;
     }
+    return INT_MIN;
 }
 
 int contains(struct List *list, int value) {
@@ -95,8 +100,8 @@ int contains(struct List *list, int value) {
 }
 
 void sortList(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else {
         struct Node *node;
         int temp;
@@ -115,8 +120,8 @@ void sortList(struct List *list) {
 }
 
 void printList(struct List *list) {
-    if (list == NULL) printf("List uninitialized\n");
-    else if (list->first == NULL) printf("List empty\n");
+    if (list == NULL) printf("List is NULL\n");
+    else if (list->first == NULL) printf("List is empty\n");
     else {
         struct Node *node = list->first;
         while (node->next != NULL) {
@@ -138,5 +143,5 @@ void freeList(struct List *list) {
         }
         list->first = NULL;
     }
-    else printf("List uninitialized\n");
+    else printf("List is NULL\n");
 }

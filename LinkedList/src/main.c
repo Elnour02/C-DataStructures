@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "../include/linkedList.h"
 
 int main() {
@@ -40,14 +41,14 @@ int main() {
             case 5:
                 printf("\n");
                 first = getFirst(&list);
-                printf("First value is %d", first);
-                printf("\n");
+                if (first != INT_MIN) printf("First value is %d\n", first);
+                else printf("List is empty\n");
                 break;
             case 6:
                 printf("\n");
                 last = getLast(&list);
-                printf("Last value is %d", last);
-                printf("\n");
+                if (last != INT_MIN) printf("Last value is %d\n", last);
+                else printf("List is empty\n");
                 break;
             case 7:
                 printf("\n");
@@ -55,8 +56,7 @@ int main() {
                 scanf("%d", &value);
                 contain = contains(&list, value);
                 if (contain) printf("The list contains %d", value);
-                else printf("The list does not contain %d", value);
-                printf("\n");
+                else printf("The list does not contain %d\n", value);
                 break;
             case 8:
                 printf("\n");
