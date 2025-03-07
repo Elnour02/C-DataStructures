@@ -15,16 +15,16 @@ int main() {
         scanf("%d", &choice);
         switch (choice) {
             case 1:
+                printf("\n");
                 printf("Value: ");
                 scanf("%d", &value);
-                printf("\n");
                 addFirst(&list, value);
                 printList(&list);
                 break;
             case 2:
+                printf("\n");
                 printf("Value: ");
                 scanf("%d", &value);
-                printf("\n");
                 addLast(&list, value);
                 printList(&list);
                 break;
@@ -55,7 +55,8 @@ int main() {
                 printf("Value: ");
                 scanf("%d", &value);
                 contain = contains(&list, value);
-                if (contain) printf("The list contains %d", value);
+                printf("\n");
+                if (contain) printf("The list contains %d\n", value);
                 else printf("The list does not contain %d\n", value);
                 break;
             case 8:
