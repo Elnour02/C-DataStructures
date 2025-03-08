@@ -19,6 +19,7 @@ int main() {
                 printf("Value: ");
                 scanf("%d", &value);
                 addFirst(&list, value);
+                printf("\n");
                 printList(&list);
                 break;
             case 2:

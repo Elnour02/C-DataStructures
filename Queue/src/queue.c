@@ -64,9 +64,9 @@ void printQueue(struct Queue* queue) {
     if (queue == NULL) printf("Queue is NULL\n");
     else if (queue->numOfElements == 0) printf("Queue is empty\n");
     else {
-        for (int i = 0; i < queue->numOfElements - 1; i++) {
+        for (int i = queue->numOfElements - 1; i > 0; i--) {
             printf("%d - ", *(queue->data + i));
         }
-        printf("%d\n", *(queue->data + queue->numOfElements - 1));
+        printf("%d\n", *(queue->data));
     }
 }
